@@ -377,7 +377,7 @@ def create_all_waveforms(bank, ifos, snrs, requested, minsignals=10, change_inc=
                     else:
                         try:
                             strain = strains[np.random.randint(0, len(strains))]
-                            bank = create_waveforms(bank, ifo, strain, snr_levels, approximant, variables, band=band, change_inc=change_inc, change_position=change_position)
+                            bank = create_waveform(bank, ifo, strain, snr_levels, approximant, variables, band=band, change_inc=change_inc, change_position=change_position)
                         except RuntimeError:
                             print('{0}/{1} - {2} list {3}  variables = {4}  Failed'.format(count, number, approximant, listnum+1, variables))
                         else:
